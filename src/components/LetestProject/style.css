@@ -1,0 +1,9 @@
+.letestProjectImageContainer{
+    width: 500px;
+    overflow: hidden;
+    padding-right: 50px;
+}
+.letestProjectImageContainer img{
+    max-width: 100%;
+    max-height: 100%;
+}

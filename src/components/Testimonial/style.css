@@ -1,0 +1,22 @@
+.testimonyImageContainer{
+    width: 160px;
+    height: 240px;
+    overflow: hidden;
+    border-radius: 3px;
+}
+.testimonyImageContainer img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.profileImageContainer{
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.profileImageContainer img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

@@ -1,0 +1,11 @@
+.meLeftImgContainer{
+    width: 276px;
+    height: 445px;
+    overflow: hidden;
+    position: absolute;
+}
+.meLeftImgContainer img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
