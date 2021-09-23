@@ -18,7 +18,7 @@ import Qualification from "./components/Qualificatoin";
 const App = (props) => {
     useEffect(() => {
         AOS.init({
-            duration: 800,
+            duration: 750,
         });
     }, []);
 
