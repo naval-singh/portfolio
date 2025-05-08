@@ -10,13 +10,13 @@ const SocialFooter = () => {
   ];
 
   return (
-    <section className="w-full h-28 border-t border-mainGray">
+    <section className="w-full h-28 border-t border-borderGray">
       <ul className="h-14 mt-14 flex items-center justify-evenly uppercase text-xs font-medium tracking-widest cursor-pointer">
         {socialLinks.map((link) => (
           <motion.li
             key={link.id}
             className="text-mainGray transition-colors duration-150 ease-in-out"
-            whileHover={{ x: -5, color: link.color }}
+            whileHover={{ x: [-5, 5], color: link.color }}
             transition={{
               type: "spring",
               stiffness: 600,

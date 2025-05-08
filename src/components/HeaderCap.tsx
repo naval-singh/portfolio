@@ -10,7 +10,7 @@ const HeaderCap: FC<HeaderCapProps> = ({ title }) => {
       <span className="text-xs uppercase tracking-widest font-medium">
         {title}
       </span>
-      <span className="border-b w-6 mt-4 border-[#3a3a3a]" />
+      <span className="border-b w-6 mt-4 border-borderGray" />
     </div>
   );
 };

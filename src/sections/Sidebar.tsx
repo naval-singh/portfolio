@@ -8,7 +8,7 @@ const Sidebar = () => {
   const [classes, setClasses] = useState<string>("");
   const [showSubItems, setShowSubItems] = useState<boolean>(false);
   let baseClasses =
-    "z-50 absolute top-0 right-0 h-lvh bg-baseGray transition-all duration-300 ease-in-out overflow-hidden";
+    "z-50 fixed top-0 right-0 h-lvh bg-baseGray transition-all duration-300 ease-in-out overflow-hidden";
 
   useMemo(() => {
     if (showSidebar) {
@@ -58,7 +58,7 @@ const Sidebar = () => {
         onClick={() => setShowSidebar(false)}
         className={`${
           showSidebar ? "block" : "hidden"
-        } z-40 absolute top-0 left-0 w-lvw h-lvh bg-black opacity-40`}
+        } z-40 fixed top-0 left-0 w-lvw h-lvh bg-black opacity-40`}
       />
       {/* sidebar */}
       <div className={`${baseClasses} ${classes}`}>
