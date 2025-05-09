@@ -13,7 +13,7 @@ const ServiceTile: FC<ServiceTileProps> = ({ icon, title, desc }) => {
   return (
     <motion.div
       className="
-        w-[296px] h-[310px] border border-borderGray flex flex-col items-center gap-10
+        w-[360px] h-[310px] border border-borderGray flex flex-col items-center gap-10
         hover:border-white transition-colors duration-200 relative
       "
       onMouseEnter={() => setIsHovered(true)}
@@ -50,14 +50,14 @@ const ServiceTile: FC<ServiceTileProps> = ({ icon, title, desc }) => {
 
       {/* Animated Desc */}
       <motion.div
-        className="absolute px-10 text-center text-xs text-white"
+        className="absolute px-10 text-center text-sm text-white"
         animate={{
           top: "50%",
           opacity: isHovered ? 1 : 0,
           scaleX: isHovered ? 1 : 0,
           scaleY: isHovered ? 1 : 0,
         }}
-        transition={{ duration: 0.15, ease: "easeInOut" }}
+        transition={{ type: "spring", stiffness: 300, damping: 20, duration: 0.15, ease: "easeInOut" }}
       >
         {desc}
       </motion.div>

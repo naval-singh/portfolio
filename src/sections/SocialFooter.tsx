@@ -15,7 +15,7 @@ const SocialFooter = () => {
         {socialLinks.map((link) => (
           <motion.li
             key={link.id}
-            className="text-mainGray transition-colors duration-150 ease-in-out"
+            className="text-mainGray transition-colors duration-150 ease-in-out py-2"
             whileHover={{ x: [-5, 5], color: link.color }}
             transition={{
               type: "spring",

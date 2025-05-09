@@ -20,12 +20,14 @@ const Contact = () => {
 
       {/* form */}
       <form
+        // method="POST"
+        // action="https://formsubmit.co/navalverma@outlook.com"
         onSubmit={handleFormSubmit}
         className="mx-auto w-[776px] py-4 flex flex-col gap-10 mt-4 mb-14"
       >
-        <Input placeholder="NAME" />
-        <Input placeholder="EMAIL" type="email" />
-        <Input placeholder="MESSAGE" type="textbox" />
+        <Input name="name" placeholder="NAME" />
+        <Input name="email" placeholder="EMAIL" type="email" />
+        <Input name="message" placeholder="MESSAGE" type="textbox" />
         <Button label="send message" marginTop="mt-6" type="submit" />
       </form>
 
