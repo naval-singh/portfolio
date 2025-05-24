@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import HeaderCap from "../components/HeaderCap";
 import Tabs from "../components/Tabs";
 import type { InfoContainerItem, TabItem } from "../types";
+import MaxContainer from "../components/MaxContainer";
 
 const experiences: InfoContainerItem[] = [
   {
@@ -82,15 +83,17 @@ const Resume = () => {
 
   const [activeTab, setActiveTab] = useState<TabItem>(tabs[0]);
   return (
-    <div className="w-full bg-bgGray pb-12 pt-32">
-      {/* headings */}
-      <HeaderCap title="resume" />
-      <Header title="People I've Worked With" />
+    <section className="w-full bg-bgGray ">
+      <MaxContainer>
+        <div className="pb-12 pt-32">
+          {/* headings */}
+          <HeaderCap title="resume" />
+          <Header title="People I've Worked With" />
 
-      <Tabs tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
-
-
-    </div>
+          <Tabs tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
+        </div>
+      </MaxContainer>
+    </section>
   );
 };
 

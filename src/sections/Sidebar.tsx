@@ -30,8 +30,9 @@ const Sidebar = () => {
       subTitle: [
         { id: 1, title: "linkedin" },
         { id: 2, title: "github" },
-        { id: 3, title: "twitter" },
+        { id: 3, title: "facebook" },
         { id: 4, title: "instagram" },
+        { id: 5, title: "twitter" },
       ],
     },
   ];
@@ -47,12 +48,12 @@ const Sidebar = () => {
   return (
     <>
       {/* right menu icon */}
-      <section className="fixed top-6 right-6">
+      <div className="fixed top-6 right-6 z-40">
         <IconButton
           icon={<HiMenu size={40} />}
           onClick={() => setShowSidebar((prev) => !prev)}
         />
-      </section>
+      </div>
       {/* backdrop */}
       <div
         onClick={() => setShowSidebar(false)}
@@ -82,7 +83,7 @@ const Sidebar = () => {
               {item?.subTitle && (
                 <ul
                   className={`transition-all duration-150 ease-in-out overflow-hidden ${
-                    showSubItems ? "h-40" : "h-0"
+                    showSubItems ? "h-48" : "h-0"
                   }`}
                 >
                   {item?.subTitle?.map((subItem) => (

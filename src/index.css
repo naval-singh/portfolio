@@ -16,3 +16,11 @@ body {
   color: #ffffff;
   font-family: "Montserrat", sans-serif;
 }
+
+.hero-back {
+  background-image: url(/public/profile.jpeg);
+  background-repeat: no-repeat;
+  background-position: 280px 30px;
+  filter: grayscale(100%);
+  transform: scaleX(-1) scale(1.2);
+}

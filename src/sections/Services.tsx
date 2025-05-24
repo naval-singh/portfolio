@@ -4,6 +4,7 @@ import { TbDeviceMobileCode } from "react-icons/tb";
 import { MdOutlineMonitor } from "react-icons/md";
 import { FaCode } from "react-icons/fa6";
 import ServiceTile from "../components/ServiceTile";
+import MaxContainer from "../components/MaxContainer";
 
 const Services = () => {
   const services = [
@@ -28,23 +29,25 @@ const Services = () => {
   ];
 
   return (
-    <div className="w-full pb-40 pt-32">
-      {/* headings */}
-      <HeaderCap title="services" />
-      <Header title="What I Do" />
+    <MaxContainer>
+      <section className="w-full pb-40 pt-32">
+        {/* headings */}
+        <HeaderCap title="services" />
+        <Header title="What I Do" />
 
-      {/* services */}
-      <div className="mt-10 flex items-center justify-center gap-10">
-        {services?.map((item) => (
-          <ServiceTile
-            key={item.id}
-            icon={item.icon}
-            title={item.title}
-            desc={item.desc}
-          />
-        ))}
-      </div>
-    </div>
+        {/* services */}
+        <div className="mt-10 flex items-center justify-center gap-10">
+          {services?.map((item) => (
+            <ServiceTile
+              key={item.id}
+              icon={item.icon}
+              title={item.title}
+              desc={item.desc}
+            />
+          ))}
+        </div>
+      </section>
+    </MaxContainer>
   );
 };
 

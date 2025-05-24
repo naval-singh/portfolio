@@ -13,7 +13,7 @@ const ServiceTile: FC<ServiceTileProps> = ({ icon, title, desc }) => {
   return (
     <motion.div
       className="
-        w-[360px] h-[310px] border border-borderGray flex flex-col items-center gap-10
+        w-[400px] h-[310px] border border-borderGray flex flex-col items-center gap-10
         hover:border-white transition-colors duration-200 relative
       "
       onMouseEnter={() => setIsHovered(true)}

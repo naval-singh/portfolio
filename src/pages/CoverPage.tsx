@@ -9,7 +9,7 @@ import SocialFooter from "../sections/SocialFooter";
 
 const CoverPage = () => {
   return (
-    <main className="relative mx-auto max-w-[1440px]">
+    <main className="relative">
       <Sidebar />
       <Hero />
       <About />
