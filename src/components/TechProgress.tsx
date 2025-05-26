@@ -1,6 +1,5 @@
-import { useEffect, useState, type FC } from "react";
 import { colors } from "../contants/colors";
-import "react-circular-progressbar/dist/styles.css";
+import { useEffect, useState, type FC } from "react";
 import { CircularProgressbar } from "react-circular-progressbar";
 
 interface TechProgressProps {
@@ -12,10 +11,26 @@ interface TechProgressProps {
 
 const TechProgress: FC<TechProgressProps> = ({ item }) => {
   const [percentage, setPercentage] = useState<number>(1);
+  const [isProgressVisible, setIsProgressVisible] = useState<boolean>(false);
 
   useEffect(() => {
-    setAnimatedValue(item.percentage);
+    const handleScroll = () => {
+      const el = document.getElementById("tech-progress");
+      if (!el) return;
+
+      const rect = el.getBoundingClientRect();
+      if (rect.top >= 0 && rect.top <= window.innerHeight) {
+        setIsProgressVisible(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    isProgressVisible && setAnimatedValue(item.percentage);
+  }, [isProgressVisible]);
 
   const setAnimatedValue = async (maxValue: number = 70) => {
     for (let i = 1; i <= maxValue; i++) {

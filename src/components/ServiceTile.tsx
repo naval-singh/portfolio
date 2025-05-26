@@ -21,7 +21,7 @@ const ServiceTile: FC<ServiceTileProps> = ({ icon, title, desc }) => {
     >
       {/* Animated Icon */}
       <motion.div
-        className="absolute z-10 p-2 bg-black"
+        className="absolute z-10 p-2 bg-bgGray"
         animate={{
           top: isHovered ? "-28px" : "40%",
           translateY: isHovered ? "0%" : "-40%",

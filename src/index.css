@@ -5,6 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html{
+  scroll-behavior: smooth;
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -18,7 +22,7 @@ body {
 }
 
 .hero-back {
-  background-image: url(/public/profile.jpeg);
+  background-image: url(/profile.jpeg);
   background-repeat: no-repeat;
   background-position: 280px 30px;
   filter: grayscale(100%);
