@@ -10,10 +10,10 @@ const Hero = () => {
         <MaxContainer>
           <div className="w-full h-svh flex items-center justify-center">
             <div className="w-1/2 h-fit flex flex-col items-start justify-center pl-[220px]">
-              <h2 className="text-[32px] leading-10 tracking-[8px] font-semibold uppercase">
+              <h2 className="text-4xl leading-10 tracking-[8px] font-medium uppercase">
                 Naval Verma
               </h2>
-              <span className="border-b w-6 mt-6 mb-4 border-borderGray" />
+              <span className="border-b w-6 mt-6 mb-5 border-borderGray" />
               <h4 className="text-sm tracking-[2px]">
                 Web and Mobile App Developer
               </h4>

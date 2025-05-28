@@ -1,4 +1,4 @@
-import type { FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import { Element } from "react-scroll";
 import Input from "../components/Input";
 import Header from "../components/Header";
@@ -11,9 +11,46 @@ import MaxContainer from "../components/MaxContainer";
 import InformationIcon from "../components/InformationIcon";
 
 const Contact = () => {
-  const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const currentDomain = window.location.origin;
+  const [form, setForm] = useState<{
+    name: string;
+    email: string;
+    message: string;
+  }>({ name: "", email: "", message: "" });
+
+  const setFormValue = (key: string, value: string) => {
+    setForm((prev) => {
+      return {
+        ...prev,
+        [key]: value,
+      };
+    });
   };
+
+  const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      const payload = {
+        ...form,
+        domain: currentDomain,
+      };
+      const url = "https://contact-naval.up.railway.app/contact";
+      const res = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (res.status === 200) {
+        const data = await res.json();
+        alert(data?.message ?? "Sumitted...");
+        setForm({ name: "", email: "", message: "" });
+      }
+    } catch (error) {
+      console.log(error);
+      alert("Something went wrong");
+    }
+  };
+
   return (
     <Element name="contact">
       <MaxContainer>
@@ -24,14 +61,29 @@ const Contact = () => {
 
           {/* form */}
           <form
-            // method="POST"
-            // action="https://formsubmit.co/navalverma@outlook.com"
             onSubmit={handleFormSubmit}
             className="mx-auto w-[776px] py-4 flex flex-col gap-10 mt-4 mb-14"
           >
-            <Input name="name" placeholder="NAME" />
-            <Input name="email" placeholder="EMAIL" type="email" />
-            <Input name="message" placeholder="MESSAGE" type="textbox" />
+            <Input
+              required
+              placeholder="NAME"
+              value={form.name}
+              setValue={(val) => setFormValue("name", val)}
+            />
+            <Input
+              required
+              placeholder="EMAIL"
+              type="email"
+              value={form.email}
+              setValue={(val) => setFormValue("email", val)}
+            />
+            <Input
+              required
+              placeholder="MESSAGE"
+              type="textbox"
+              value={form.message}
+              setValue={(val) => setFormValue("message", val)}
+            />
             <Button label="send message" marginTop="mt-6" type="submit" />
           </form>
 
