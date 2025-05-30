@@ -7,9 +7,9 @@ interface InformationIconProps {
 
 const InformationIcon: FC<InformationIconProps> = ({ icon, label }) => {
   return (
-    <div className="flex flex-col items-center justify-center gap-3 w-60 h-40">
+    <div className="flex flex-col items-center justify-center gap-3 w-60 sm:h-40 h-28">
       {icon}
-      <span className="text-white text-sm">{label}</span>
+      <span className="text-white text-sm max-sm:text-xs">{label}</span>
     </div>
   );
 };

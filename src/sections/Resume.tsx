@@ -17,7 +17,7 @@ const Resume = () => {
   return (
     <Element name="resume">
       <MaxContainer>
-        <section className="pb-12 pt-32">
+        <section className="pb-12 sm:pt-32 pt-24">
           {/* headings */}
           <HeaderCap title="resume" />
           <Header

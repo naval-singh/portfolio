@@ -8,20 +8,20 @@ const Hero = () => {
     <Element name="home">
       <section className="w-full relative">
         <MaxContainer>
-          <div className="w-full h-svh flex items-center justify-center">
-            <div className="w-1/2 h-fit flex flex-col items-start justify-center pl-[220px]">
-              <h2 className="text-4xl leading-10 tracking-[8px] font-medium uppercase">
+          <div className="w-full h-svh flex items-center sm:justify-center relative">
+            <div className="sm:w-1/2 w-2/3 h-fit flex flex-col items-start justify-center sm:pl-[220px] pl-5">
+              <h2 className="sm:text-4xl text-xl leading-10 sm:tracking-[8px] tracking-[4px] font-medium uppercase">
                 Naval Verma
               </h2>
-              <span className="border-b w-6 mt-6 mb-5 border-borderGray" />
-              <h4 className="text-sm tracking-[2px]">
+              <span className="border-b w-6 sm:mt-6 mt-3 sm:mb-5 mb-2 border-borderGray" />
+              <h4 className="text-sm max-sm:text-xs tracking-[2px]">
                 Web and Mobile App Developer
               </h4>
             </div>
-            <div className="hero-back w-[calc(50%-100px)] h-full" />
+            <div className="hero-back -scale-x-100 sm:scale-[1.2] sm:scale-x-[-1.2] max-sm:-z-10 max-sm:absolute sm:bg-[position:180px_30px] max-sm:bg-[position:-140px_-20px] sm:w-[calc(50%-100px)] w-full h-full" />
 
             {/* social links */}
-            <div className="absolute left-5 bottom-10">
+            <div className="max-sm:hidden absolute left-5 bottom-10">
               <div className="flex flex-col items-center justify-center gap-1">
                 <div className="border-l-2 h-14 mb-3 border-borderGray" />
                 {socialLinks.map((link) => (

@@ -17,9 +17,9 @@ const Tabs: FC<TabsProps> = ({ tabs, activeTab, setActiveTab }) => {
             key={tab.id}
             onClick={() => setActiveTab(tab)}
             className={`
-            cursor-pointer transition-all duration-200 text-base tracking-[1px] border-b-2
+            cursor-pointer transition-all duration-200 sm:text-base text-sm tracking-[1px] border-b-2
             pb-3 px-3 border-bgGray hover:text-white hover:border-mainGray
-            ${activeTab.title === tab.title ? "text-white" : "text-mainGray"}
+            ${activeTab.title === tab.title ? "text-white border-mainGray" : "text-mainGray"}
           `}
           >
             {tab.title}

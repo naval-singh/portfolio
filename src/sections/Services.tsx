@@ -10,13 +10,13 @@ const Services = () => {
     <Element name="services">
       <section className="w-full bg-bgGray">
         <MaxContainer>
-          <div className="w-full pb-40 pt-32">
+          <div className="w-full sm:pb-40 sm:pt-32 pt-24 pb-24">
             {/* headings */}
             <HeaderCap title="services" />
             <Header title="What I Do" />
 
             {/* services */}
-            <div className="mt-10 flex items-center justify-center gap-10">
+            <div className="mt-10 max-sm:px-5 flex sm:flex-row flex-col items-center justify-center gap-10">
               {services?.map((item) => (
                 <ServiceTile
                   key={item.id}

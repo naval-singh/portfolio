@@ -6,7 +6,7 @@ interface ParagraphProps {
 
 const Paragraph: FC<ParagraphProps> = ({ desc }) => {
   return (
-    <p className="w-full mx-auto text-center text-base text-mainGray">{desc}</p>
+    <p className="w-full mx-auto text-center sm:text-base text-sm text-mainGray">{desc}</p>
   );
 };
 

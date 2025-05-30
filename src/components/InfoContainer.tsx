@@ -9,26 +9,26 @@ const InfoContainer: FC<InfoContainerProps> = ({ dataList }) => {
   return dataList.map((item, index, list) => {
     let isOdd = index%2 === 1
     return (
-      <div key={item.id} className="relative flex flex-col items-center">
+      <div key={item.id} className="relative flex flex-col sm:items-center items-start max-sm:w-full max-sm:px-5">
         {/* main circle */}
-        <div className="w-36 h-36 bg-white rounded-full text-black text-xxs font-medium flex flex-col justify-center items-center gap-1 uppercase tracking-[2px]">
+        <div className="sm:w-36 w-20 sm:h-36 h-20 bg-white rounded-full text-black sm:text-xxs text-[9px] font-medium flex flex-col justify-center items-center sm:gap-1 uppercase sm:tracking-[2px] tracking-[1px]">
           <span>{item.end}</span>
           <span>-</span>
           <span>{item.start}</span>
         </div>
         {/* seperator */}
         {list.length - 1 !== index && (
-          <div className="border-l border-borderGray h-28" />
+          <div className="border-l border-borderGray h-28 max-sm:h-36 max-sm:ml-10" />
         )}
         {/* details */}
-        <div className={`absolute top-0 flex flex-col w-max max-w-[520px] ${isOdd ? 'left-52 items-start' : 'right-52 items-end'}`}>
-          <span className="text-xs uppercase tracking-[2px] text-white">
+        <div className={`absolute sm:top-0 top-1 max-sm:pr-5 flex flex-col sm:w-max sm:max-w-[520px] ${isOdd ? 'left-52 max-sm:left-32 items-start' : 'sm:right-52 max-sm:left-32 items-end max-sm:items-start'}`}>
+          <span className="text-xs max-sm:text-xxs uppercase tracking-[2px] text-white">
             {item.company}
           </span>
-          <span className={`mt-4 text-base font-medium tracking-[2px] text-mainGray ${isOdd ? 'text-left' : 'text-right'}`}>
+          <span className={`mt-4 max-sm:mt-2 text-base max-sm:text-xxs font-medium tracking-[2px] text-mainGray`}>
             {item.title}
           </span>
-          <span className={`mt-6 text-sm/6 ${isOdd ? 'text-left' : 'text-right'}`}>{item.desc}</span>
+          <span className={`mt-6 max-sm:mt-4 sm:text-sm/6 text-xs ${isOdd ? 'text-left' : 'text-right max-sm:text-left'}`}>{item.desc}</span>
         </div>
       </div>
     )

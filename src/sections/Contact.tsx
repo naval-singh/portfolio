@@ -54,7 +54,7 @@ const Contact = () => {
   return (
     <Element name="contact">
       <MaxContainer>
-        <section className="w-full pb-12 pt-32">
+        <section className="w-full sm:pb-12 pb-20 sm:pt-32 pt-24">
           {/* headings */}
           <HeaderCap title="contact" />
           <Header title="Get in touch" />
@@ -62,7 +62,7 @@ const Contact = () => {
           {/* form */}
           <form
             onSubmit={handleFormSubmit}
-            className="mx-auto w-[776px] py-4 flex flex-col gap-10 mt-4 mb-14"
+            className="mx-auto sm:w-[776px] w-full py-4 max-sm:px-5 flex flex-col gap-10 max-sm:gap-6 mt-4 mb-14"
           >
             <Input
               required
@@ -88,7 +88,7 @@ const Contact = () => {
           </form>
 
           {/* contact info */}
-          <div className="w-full flex items-center justify-evenly">
+          <div className="w-full flex sm:flex-row flex-col items-center sm:justify-evenly justify-center">
             <InformationIcon
               icon={<FaSquarePhone size={36} />}
               label="+91 9009824492"

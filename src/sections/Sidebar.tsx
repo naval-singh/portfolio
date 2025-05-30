@@ -14,7 +14,7 @@ const Sidebar = () => {
 
   useMemo(() => {
     if (showSidebar) {
-      setClasses("w-64");
+      setClasses("sm:w-64 w-52");
     } else {
       setClasses("w-0");
       setShowSubItems(false)
@@ -39,7 +39,7 @@ const Sidebar = () => {
   return (
     <>
       {/* right menu icon */}
-      <div className="fixed top-6 right-6 z-40">
+      <div className="fixed sm:top-6 top-4 sm:right-6 right-4 z-40">
         <IconButton
           icon={<HiMenu size={40} />}
           onClick={() => setShowSidebar((prev) => !prev)}
@@ -56,13 +56,13 @@ const Sidebar = () => {
 
       {/* sidebar */}
       <div className={`${baseClasses} ${classes}`}>
-        <ul className="mx-10 mt-20">
+        <ul className="sm:mx-10 mx-7 mt-20">
           {sidebarItems.map((item) => (
             <div key={item.id}>
               <Link to={item.link} smooth={true} duration={500}>
                 <li
                   onClick={() => handleClickItem(item)}
-                  className="text-white text-sm uppercase tracking-wider mb-5 flex items-center justify-between cursor-pointer hover:text-mainGray transition-all duration-150 ease-in-out"
+                  className="text-white sm:text-sm text-xs uppercase tracking-wider mb-5 flex items-center justify-between cursor-pointer hover:text-mainGray transition-all duration-150 ease-in-out"
                 >
                   <span>{item.title}</span>
                   {item?.subTitle && (
@@ -86,7 +86,7 @@ const Sidebar = () => {
                       href={subItem.to}
                       target="_blank"
                       key={subItem.id}
-                      className="text-white text-sm uppercase tracking-wider mb-5 ml-5 cursor-pointer hover:text-mainGray"
+                      className="text-white sm:text-sm text-xs uppercase tracking-wider mb-5 ml-5 cursor-pointer hover:text-mainGray"
                     >
                       {subItem.title}
                     </a>
@@ -101,7 +101,7 @@ const Sidebar = () => {
       {/* scroll to top button */}
       <button
         onClick={hadnelScrollToTop}
-        className="fixed bottom-6 right-6 z-40 bg-baseGray w-14 h-14 rounded-full flex justify-center items-center text-mainGray hover:text-white transition-colors duration-150"
+        className="fixed sm:bottom-6 bottom-4 sm:right-6 right-4 z-40 bg-baseGray w-14 h-14 rounded-full flex justify-center items-center text-mainGray hover:text-white transition-colors duration-150"
       >
         <HiChevronUp size={40} />
       </button>

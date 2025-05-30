@@ -11,19 +11,19 @@ const TechStack = () => {
     <Element name="techstack">
       <section className="w-full bg-bgGray">
         <MaxContainer>
-          <section className="pb-12 pt-32">
+          <section className="pb-12 sm:pt-32 pt-24">
             {/* headings */}
             <HeaderCap title="Techs & Tools" />
             <Header title="Techs & Tools I work with" />
 
             {/* tech stack marquee */}
-            <div className="w-full mt-20 mb-24">
+            <div className="w-full sm:mt-20 sm:mb-24 mt-10 mb-16">
               <Marquee direction="left" speed={30}>
                 {upperRow.map((tech, index) => (
                   <TechImage key={index} src={tech.src} alt={tech.alt} />
                 ))}
               </Marquee>
-              <div className="my-20" />
+              <div className="sm:my-20 my-10" />
               <Marquee direction="right" speed={30}>
                 {lowerRow.map((tech, index) => (
                   <TechImage key={index} src={tech.src} alt={tech.alt} />

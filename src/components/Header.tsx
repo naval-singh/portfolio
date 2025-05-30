@@ -6,8 +6,8 @@ interface HeaderProps {
 
 const Header: FC<HeaderProps> = ({ title }) => {
   return (
-    <div className="w-full flex items-center justify-center py-4">
-      <span className="text-3xl font-cardo">{title}</span>
+    <div className="w-full flex items-center justify-center py-4 max-sm:px-5">
+      <span className="text-center text-3xl max-sm:text-2xl font-cardo">{title}</span>
     </div>
   );
 };
